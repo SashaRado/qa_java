@@ -25,8 +25,9 @@ public class LionParameterizedTest {
 
     @Test
     public void doesHaveMane() throws Exception {
-        Lion lion = new Lion(sex);
-        boolean actualHasMane = lion.hasMane;
+        Feline feline = new Feline();  // Создаем экземпляр класса Feline
+        Lion lion = new Lion(sex, feline);  // Используем инъекцию зависимостей
+        boolean actualHasMane = lion.doesHaveMane();  // Используем метод doesHaveMane()
         Assert.assertEquals(hasMane, actualHasMane);
     }
 }
